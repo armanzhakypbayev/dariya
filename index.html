@@ -190,7 +190,7 @@
     /* ─── DONATION SECTION ─── */
     .donate-section {
       background: #fff;
-      padding: 56px 24px;
+      padding: 56px 24px 0;
       text-align: center;
       box-shadow: 0 2px 20px rgba(0,0,0,0.06);
     }
@@ -679,7 +679,6 @@
       display: flex;
       justify-content: space-between;
       font-size: 13px;
-      color: rgba(255,255,255,0.5);
       margin-bottom: 8px;
     }
 
@@ -694,13 +693,13 @@
       height: 100%;
       background: linear-gradient(90deg, #8bb650, #b5e06a);
       border-radius: 50px;
-      width: 28%;
+      width: 30%;
       animation: fill 1.5s ease forwards;
     }
 
     @keyframes fill {
       from { width: 0; }
-      to { width: 28%; }
+      to { width: 30%; }
     }
 
     /* ─── STICKY DONATE BAR ─── */
@@ -932,14 +931,6 @@
 </section>
 
 <!-- ─── DONATION ─── -->
-<section class="donate-section" id="donate">
-  <h2>Сделать пожертвование</h2>
-  <br />
-  <a href="https://pay.kaspi.kz/pay/2qt9fn5a" class="donate-btn" target="_blank" id="mainDonateBtn">
-    Перевести через Kaspi
-  </a>
-</section>
-
 <!-- ─── STORY ─── -->
 <section class="story-section">
   <div class="section-label">История Дарии</div>
@@ -965,7 +956,7 @@
       <li><div class="dot"></div>Протокол лечения — 2 года</li>
       <li><div class="dot"></div>Получили 4 курса химиотерапии</li>
       <li><div class="dot"></div>Из-за сильных побочных эффектов у Дарии произошла <strong>остановка сердца</strong></li>
-      <li><div class="dot"></div>36 дней в реанимации</li>
+      <li><div class="dot"></div>34 дней в реанимации</li>
     </ul>
   </div>
 
@@ -977,6 +968,22 @@
       Сейчас врачи дают нам <strong>благоприятные прогнозы</strong>, но для продолжения лечения нужны огромные средства.
       Это единственный шанс спасти Дарию.
     </p>
+  </div>
+
+  <div class="story-card">
+    <span class="story-step">Сбор средств</span>
+    <h3>Помогите нам достичь цели</h3>
+    <div class="progress-wrap" style="max-width:100%;margin:16px 0 0;padding:0;">
+      <div class="progress-labels" style="color:#555;font-size:18px;">
+        <span>Собрано: <strong>76 млн ₸</strong></span>
+        <span>Цель: <strong>254 млн ₸</strong></span>
+      </div>
+      <div class="progress-bar" style="background:rgba(0,0,0,0.1);height:14px;">
+        <div class="progress-fill" style="width:30%;"></div>
+      </div>
+      <div style="text-align:center;margin-top:12px;font-size:17px;color:#888;">Осталось собрать: <strong style="color:#e8401a;">178 млн ₸</strong></div>
+    </div>
+    <img src="img/img4.jpeg" alt="Расчёт стоимости лечения" onclick="openLightbox(this)" style="width:100%;border-radius:12px;margin-top:16px;display:block;cursor:zoom-in;" />
   </div>
 </section>
 
@@ -1003,8 +1010,8 @@
     </div>
     <div class="treatment-step">
       <div class="step-num">3</div>
-      <h3>Трансплантация</h3>
-      <p>Трансплантация стволовых клеток для восстановления организма</p>
+      <h3>Радиотерапия</h3>
+      <p>Облучение поражённых зон для уничтожения оставшихся раковых клеток</p>
     </div>
   </div>
 </section>
@@ -1018,6 +1025,14 @@
 </section>
 
 <!-- ─── PAYMENT ─── -->
+<section class="donate-section" id="donate">
+  <h2>Сделать пожертвование</h2>
+  <br />
+  <a href="https://pay.kaspi.kz/pay/2qt9fn5a" class="donate-btn" target="_blank" id="mainDonateBtn">
+    Перевести через Kaspi
+  </a>
+</section>
+
 <section class="payment-section">
   <h2>Реквизиты для перевода</h2>
   <div class="payment-cards">
@@ -1101,7 +1116,23 @@
       if (target) target.scrollIntoView({ behavior: 'smooth' });
     });
   });
+  function openLightbox(img) {
+    const overlay = document.getElementById('lightbox');
+    document.getElementById('lightbox-img').src = img.src;
+    overlay.style.display = 'flex';
+    document.body.style.overflow = 'hidden';
+  }
+  document.addEventListener('DOMContentLoaded', function() {
+    document.getElementById('lightbox').addEventListener('click', function() {
+      this.style.display = 'none';
+      document.body.style.overflow = '';
+    });
+  });
 </script>
+
+<div id="lightbox" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,0.9);z-index:9999;align-items:center;justify-content:center;cursor:zoom-out;">
+  <img id="lightbox-img" src="" alt="" style="max-width:95vw;max-height:95vh;border-radius:8px;object-fit:contain;" />
+</div>
 
 </body>
 </html>
