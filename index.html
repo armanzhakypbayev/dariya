@@ -5,6 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Дария Талғатқызы — Помогите спасти дочь от нейробластомы</title>
   <style>
+    @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700;900&family=Open+Sans:wght@400;600&display=swap');
+
     * {
       margin: 0;
       padding: 0;
@@ -740,9 +742,168 @@
       .story-card { padding: 24px 20px; }
       .payment-card { min-width: 100%; }
     }
+
+    /* ─── LANDING PAGE ─── */
+    #landing { font-family: 'Open Sans', sans-serif; }
+    #landing .card {
+      position: relative; width: 100%; height: 100vh;
+      border-radius: 0; overflow: hidden;
+      display: flex; flex-direction: column;
+      background-image: url('img/bg.jpeg');
+      background-size: cover; background-position: center -80px;
+    }
+    #landing .top {
+      position: relative; z-index: 2; padding: 100px 24px 28px;
+      text-align: center;
+      background: linear-gradient(to bottom, rgba(0,0,0,0.55) 0%, rgba(0,0,0,0.25) 70%, transparent 100%);
+    }
+    #landing .name {
+      font-family: 'Montserrat', sans-serif; font-weight: 900;
+      font-size: 30px; line-height: 1.1; color: #fff;
+      text-transform: uppercase; letter-spacing: 0.5px;
+      text-shadow: 0 2px 8px rgba(0,0,0,0.6);
+    }
+    #landing .row {
+      display: flex; align-items: center; gap: 10px;
+      flex-wrap: wrap; justify-content: center; margin-top: 12px;
+    }
+    #landing .age-badge {
+      display: inline-block; background: #d4a84b; color: #fff;
+      font-family: 'Montserrat', sans-serif; font-weight: 700;
+      font-size: 20px; padding: 4px 14px; border-radius: 8px; letter-spacing: 0.5px;
+    }
+    #landing .diagnosis-label {
+      font-family: 'Montserrat', sans-serif; font-weight: 900;
+      font-size: 22px; color: #fff; text-transform: uppercase;
+      text-shadow: 0 2px 6px rgba(0,0,0,0.5);
+    }
+    #landing .diagnosis-name {
+      font-family: 'Montserrat', sans-serif; font-weight: 900;
+      font-size: 26px; color: #fff; background: #e8401a;
+      text-transform: uppercase; line-height: 1.2; margin-top: 6px;
+      display: inline-block; padding: 4px 14px; border-radius: 8px;
+    }
+    #landing .spacer { position: relative; z-index: 1; flex: 1; min-height: 40px; }
+    #landing .bottom {
+      position: relative; z-index: 2; padding: 28px 28px 28px;
+      text-align: center; margin-top: auto;
+    }
+    #landing .text-block {
+      background: rgba(255,255,255,0.7); border-radius: 12px;
+      padding: 14px 16px; margin-bottom: 14px;
+    }
+    #landing .description { font-size: 20px; color: #000; font-weight: 900; }
+    #landing .motto { font-size: 20px; color: #000; font-style: italic; font-weight: 900; }
+    @keyframes shine { from { left: -75%; } to { left: 130%; } }
+    #landing .btn {
+      position: relative; overflow: hidden; display: inline-flex;
+      align-items: center; gap: 10px;
+      background: linear-gradient(135deg, #e8401a, #c0392b); color: #fff;
+      font-family: 'Montserrat', sans-serif; font-weight: 700;
+      font-size: 20px; padding: 15px 34px; border-radius: 50px;
+      border: none; cursor: pointer; text-decoration: none;
+      box-shadow: 0 6px 20px rgba(192,57,43,0.5);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    #landing .btn::after {
+      content: ''; position: absolute; top: 0; left: -75%;
+      width: 50%; height: 100%;
+      background: linear-gradient(120deg, transparent 0%, rgba(255,255,255,0.35) 50%, transparent 100%);
+      transform: skewX(-20deg); pointer-events: none;
+    }
+    #landing .btn:hover { transform: translateY(-3px) scale(1.04); box-shadow: 0 14px 36px rgba(192,57,43,0.65); }
+    #landing .btn:hover::after { animation: shine 0.55s ease forwards; }
+    #landing .btn-icon {
+      width: 32px; height: 32px; border-radius: 8px; overflow: hidden;
+      display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+    }
+    #landing .btn-icon img { width: 100%; height: 100%; object-fit: contain; }
+    #landing .box {
+      width: 100%; background: #fff; border: none;
+      border-radius: 12px; padding: 12px 0; margin-top: 5px; font-weight: 900;
+    }
+    #landing .box-cols { display: flex; gap: 0; }
+    #landing .box-col { flex: 1; text-align: center; padding: 0 8px; }
+    #landing .box-divider { width: 1px; background: rgba(0,0,0,0.15); align-self: stretch; }
+    #landing .box-title {
+      display: flex; align-items: center; justify-content: center; gap: 6px;
+      font-family: 'Montserrat', sans-serif; font-weight: 700; font-size: 14px;
+      color: #d4a84b; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 6px;
+    }
+    #landing .box-value { font-size: 15px; color: #1a1a1a; line-height: 1.5; word-break: break-all; }
+    #landing .box-footer {
+      margin-top: 8px; padding-top: 8px; border-top: 1px solid rgba(0,0,0,0.12);
+      font-size: 15px; color: #1a1a1a; text-align: center;
+    }
+    @media (max-width: 480px) {
+      #landing .name { font-size: 34px; }
+      #landing .diagnosis-label { font-size: 20px; }
+      #landing .bottom { padding: 22px 20px 0; }
+      #landing .description { font-size: 19px; }
+      #landing .btn { font-size: 20px; padding: 13px 26px; }
+    }
+    @media (max-width: 360px) {
+      #landing .name { font-size: 26px; }
+      #landing .btn { font-size: 16px; }
+      #landing .description { font-size: 16px; }
+      #landing .motto { font-size: 16px; }
+      #landing .box-value { font-size: 13px; }
+      #landing .box-footer { font-size: 13px; }
+      #landing .box { padding: 5px 0; }
+    }
+    @media (min-width: 768px) {
+      #landing .name { font-size: 34px; }
+      #landing .diagnosis-label { font-size: 25px; }
+    }
   </style>
 </head>
 <body>
+
+<!-- ─── LANDING PAGE ─── -->
+<section id="landing">
+  <div class="card">
+    <div class="top">
+      <div class="name">Марат Дәрия Талғатқызы</div>
+      <div class="row">
+        <span class="age-badge">1 жас 11 ай</span>
+        <span class="diagnosis-label">Диагноз:</span>
+      </div>
+      <div class="diagnosis-name">Рак 4 степени<br>Нейробластома</div>
+    </div>
+    <div class="spacer"></div>
+    <div class="bottom">
+      <div class="text-block">
+        <p class="description">
+          Қызымның өмірі қазір сіздердің<br />
+          қолдауларыңызға байланысты.<br />
+          Еміне көмек сұраймыз.
+        </p>
+        <p class="motto">Әрбір садақа – үміт, <br> әрбір қолдау – өмір.</p>
+      </div>
+      <a href="https://pay.kaspi.kz/pay/2qt9fn5a" class="btn">
+        <span class="btn-icon"><img src="img/kaspi_logo.png" alt="Kaspi" /></span>
+        Садақа саламыз
+      </a>
+      <div class="box">
+        <div class="box-cols">
+          <div class="box-col">
+            <div class="box-title">Halyk bank</div>
+            <div class="box-value">4003 0351 8597 4412</div>
+          </div>
+          <div class="box-divider"></div>
+          <div class="box-col">
+            <div class="box-title">Freedom bank</div>
+            <div class="box-value">4002 8900 3036 4420</div>
+          </div>
+        </div>
+        <div class="box-footer">
+          Для переводов по номеру телефона: <br>
+          <span>+7 701 511 90 63 (Талғат М.)</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
 <!-- ─── HERO ─── -->
 <section class="hero">
@@ -759,6 +920,16 @@
         <div class="urgency-amount"><span>Нейробластома</span><br> 4 стадия</div>
         <div class="urgency-date">Каждый день на счету</div>
       </div>
+
+      <div class="progress-wrap">
+        <div class="progress-labels">
+          <span>Помогаем вместе</span>
+          <span>Каждый тенге важен</span>
+        </div>
+        <div class="progress-bar">
+          <div class="progress-fill"></div>
+        </div>
+      </div>
     </div>
 
     <!-- Right: image card -->
@@ -773,19 +944,6 @@
 <!-- ─── DONATION ─── -->
 <section class="donate-section" id="donate">
   <h2>Сделать пожертвование</h2>
-  <p>Выберите сумму или введите свою</p>
-
-  <div class="amount-grid">
-    <button class="amount-btn" onclick="selectAmount(this, '1000')">1 000 ₸</button>
-    <button class="amount-btn" onclick="selectAmount(this, '5000')">5 000 ₸</button>
-    <button class="amount-btn" onclick="selectAmount(this, '10000')">10 000 ₸</button>
-    <button class="amount-btn other" onclick="toggleCustom(this)">Другая сумма</button>
-  </div>
-
-  <div class="custom-input-wrap" id="customWrap">
-    <input type="number" id="customAmount" placeholder="Введите сумму ₸" min="100" />
-  </div>
-
   <br />
   <a href="https://pay.kaspi.kz/pay/2qt9fn5a" class="donate-btn" target="_blank" id="mainDonateBtn">
     Перевести через Kaspi
@@ -799,35 +957,35 @@
 
   <div class="story-card">
     <span class="story-step">Этап 1 — Начало</span>
-    <h3>Ей не было даже двух лет</h3>
+    <h3>Мы думали, что у нас просто лезут «зубки»</h3>
     <p>
-      Дария Талғатқызы — маленькая девочка, которой ещё нет двух лет. Она только училась ходить, смеяться, познавать мир.
-      Родители заметили, что дочка стала вялой, плохо ела и беспокойно спала. Поначалу думали — обычное недомогание.
-      Никто и представить не мог, что внутри этого крошечного тела скрывается смертельная болезнь.
+      С конца июля ребёнок стал очень беспокойным, плакал по ночам. Вызвали скорую, сделали УЗИ брюшной полости, сдавали анализы — патологий не выявлено.
+      Но боль усиливалась, малышка не спала по ночам, плакала сильно. И только в начале августа, когда дочка не смогла вставать на ножки, врачи в инфекционной больнице сделали КТ брюшной полости и выявили <strong>гигантскую опухоль размером 11 см</strong> забрюшинного пространства.
     </p>
   </div>
 
   <div class="story-card">
-    <span class="story-step">Этап 2 — Обследование</span>
-    <h3>Долгий путь к правде</h3>
-    <p>Обследования следовали одно за другим. Врачи искали причину:</p>
+    <span class="story-step">Этап 2 — Диагноз</span>
+    <h3>Диагноз, который перевернул нашу жизнь</h3>
+    <p>Обследования подтвердили самое страшное:</p>
     <ul class="timeline">
-      <li><div class="dot"></div>Педиатр — общие анализы, предположение об инфекции</li>
-      <li><div class="dot"></div>УЗИ брюшной полости — обнаружено объёмное образование</li>
-      <li><div class="dot"></div>КТ и МРТ — подтверждена опухоль надпочечника</li>
-      <li><div class="dot"></div>Онкологическое отделение — госпитализация</li>
-      <li><div class="dot"></div>Биопсия — забор материала для анализа</li>
-      <li><div class="dot"></div>Результат — нейробластома 4-й стадии с метастазами</li>
+      <li><div class="dot"></div>10 августа 2025 г. — в отделении онкологии г. Астана поставлен диагноз: <strong>нейробластома 4 стадии</strong></li>
+      <li><div class="dot"></div>11 августа — вылетели в г. Сеул, клиника Северанс</li>
+      <li><div class="dot"></div>Сеул подтвердил: нейробластома высокого риска 4 стадии</li>
+      <li><div class="dot"></div>Протокол лечения — 2 года</li>
+      <li><div class="dot"></div>Получили 4 курса химиотерапии</li>
+      <li><div class="dot"></div>Из-за сильных побочных эффектов у Дарии произошла <strong>остановка сердца</strong></li>
+      <li><div class="dot"></div>36 дней в реанимации</li>
     </ul>
   </div>
 
   <div class="story-card">
-    <span class="story-step">Этап 3 — Диагноз</span>
-    <h3>Диагноз, разбивший сердца родителей</h3>
+    <span class="story-step">Этап 3 — Шанс, за который мы боремся</span>
+    <h3>Барселона — последняя надежда</h3>
     <p>
-      Врачи подтвердили: <strong>нейробластома 4-й стадии</strong>. Это один из самых агрессивных видов рака у детей.
-      Болезнь уже дала метастазы. Единственный шанс на жизнь — полноценный курс лечения: химиотерапия, операция и трансплантация стволовых клеток.
-      Без этого лечения у Дарии нет будущего.
+      Вследствие остановки сердца мы были вынуждены сменить клинику и продолжить лечение в госпитале г. Барселона.
+      Сейчас врачи дают нам <strong>благоприятные прогнозы</strong>, но для продолжения лечения нужны огромные средства.
+      Это единственный шанс спасти Дарию.
     </p>
   </div>
 </section>
@@ -877,25 +1035,20 @@
       <div class="card-icon">💳</div>
       <h3>Halyk банк</h3>
       <div class="value" id="halykNum">4003 0351 8597 4412</div>
-      <button class="copy-btn" onclick="copyText('halykNum', this)">Скопировать номер</button>
+      <button class="copy-btn" onclick="copyText('halykNum', this)">Скопировать номер карты</button>
     </div>
     <div class="payment-card">
       <div class="card-icon">💳</div>
       <h3>Freedom банк</h3>
       <div class="value" id="freedomNum">4002 8900 3036 4420</div>
-      <button class="copy-btn" onclick="copyText('freedomNum', this)">Скопировать номер</button>
+      <button class="copy-btn" onclick="copyText('freedomNum', this)">Скопировать номер карты</button>
     </div>
     <div class="payment-card">
       <div class="card-icon">📞</div>
-      <h3>Телефон</h3>
-      <div class="value">+7 701 511 90 63</div>
-      <button class="copy-btn" onclick="window.location='tel:+77015119063'">Позвонить</button>
-    </div>
-    <div class="payment-card">
-      <div class="card-icon">👤</div>
-      <h3>Контактное лицо</h3>
-      <div class="value">Талғат М.</div>
-      <p style="font-size:13px;color:#aaa;margin-top:6px;">Папа Дарии</p>
+      <h3>Перевод по номеру телефона</h3>
+      <div class="value" id="phoneNum">+7 701 511 90 63</div>
+      <div class="value" id="phoneContact">Талғат М.</div>
+      <button class="copy-btn" onclick="copyText('phoneNum', this)">Скопировать номер</button>
     </div>
   </div>
   <p class="disclaimer">
@@ -912,14 +1065,14 @@
 
 <!-- ─── FOOTER ─── -->
 <footer>
-  <p>© 2026 Дария Талғатқызы · Все средства идут на лечение ребёнка · Halyk: 4003 0351 8597 4412</p>
+  <p>© 2026 Дария Талғатқызы <br> Все средства идут на лечение ребёнка</p>
 </footer>
 
 <!-- ─── STICKY BAR ─── -->
-<div class="sticky-bar">
+<!-- <div class="sticky-bar">
   <div class="sticky-text">Помогите спасти <span>Дарию</span> — ей нужна ваша помощь!</div>
   <a href="#donate" class="donate-btn">Помочь Дарие</a>
-</div>
+</div> -->
 
 <script>
   let selectedAmount = '';
