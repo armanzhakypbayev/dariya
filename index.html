@@ -693,13 +693,8 @@
       height: 100%;
       background: linear-gradient(90deg, #8bb650, #b5e06a);
       border-radius: 50px;
-      width: 30%;
-      animation: fill 1.5s ease forwards;
-    }
-
-    @keyframes fill {
-      from { width: 0; }
-      to { width: 30%; }
+      width: 0%;
+      transition: width 1.5s ease;
     }
 
     /* ─── STICKY DONATE BAR ─── */
@@ -973,15 +968,15 @@
   <div class="story-card">
     <span class="story-step">Сбор средств</span>
     <h3>Помогите нам достичь цели</h3>
-    <div class="progress-wrap" style="max-width:100%;margin:16px 0 0;padding:0;">
+    <div class="progress-wrap" style="max-width:100%;margin:16px 0 0;padding:0;" data-collected="178" data-goal="254">
       <div class="progress-labels" style="color:#555;font-size:18px;">
-        <span>Собрано: <strong>76 млн ₸</strong></span>
-        <span>Цель: <strong>254 млн ₸</strong></span>
+        <span>Собрано: <strong id="prog-collected"></strong></span>
+        <span>Цель: <strong id="prog-goal"></strong></span>
       </div>
       <div class="progress-bar" style="background:rgba(0,0,0,0.1);height:14px;">
-        <div class="progress-fill" style="width:30%;"></div>
+        <div class="progress-fill" id="prog-fill" style="width:0%;"></div>
       </div>
-      <div style="text-align:center;margin-top:12px;font-size:17px;color:#888;">Осталось собрать: <strong style="color:#e8401a;">178 млн ₸</strong></div>
+      <div style="text-align:center;margin-top:12px;font-size:17px;color:#888;">Осталось собрать: <strong id="prog-remaining" style="color:#e8401a;"></strong></div>
     </div>
     <img src="img/img4.jpeg" alt="Расчёт стоимости лечения" onclick="openLightbox(this)" style="width:100%;border-radius:12px;margin-top:16px;display:block;cursor:zoom-in;" />
   </div>
@@ -1116,6 +1111,23 @@
       if (target) target.scrollIntoView({ behavior: 'smooth' });
     });
   });
+  function updateProgress() {
+    const wrap = document.querySelector('.progress-wrap[data-collected]');
+    if (!wrap) return;
+    const collected = parseFloat(wrap.dataset.collected);
+    const goal = parseFloat(wrap.dataset.goal);
+    const pct = Math.min(100, (collected / goal) * 100);
+    document.getElementById('prog-collected').textContent = collected + ' млн ₸';
+    document.getElementById('prog-goal').textContent = goal + ' млн ₸';
+    document.getElementById('prog-remaining').textContent = (goal - collected).toFixed(0) + ' млн ₸';
+    const fill = document.getElementById('prog-fill');
+    fill.style.width = '0%';
+    requestAnimationFrame(() => requestAnimationFrame(() => {
+      fill.style.width = pct.toFixed(1) + '%';
+    }));
+  }
+  document.addEventListener('DOMContentLoaded', updateProgress);
+
   function openLightbox(img) {
     const overlay = document.getElementById('lightbox');
     document.getElementById('lightbox-img').src = img.src;
