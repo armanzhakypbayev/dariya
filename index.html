@@ -13,11 +13,25 @@
       box-sizing: border-box;
     }
 
+    html {
+      -webkit-text-size-adjust: 100%;
+      text-size-adjust: 100%;
+    }
+
     body {
       font-family: 'Segoe UI', Arial, sans-serif;
       background: #f9f6f1;
       color: #2d2d2d;
       line-height: 1.7;
+      overflow-x: hidden;
+    }
+
+    h1, h2, h3 {
+      line-height: 1.3;
+    }
+
+    img {
+      max-width: 100%;
     }
 
     /* ─── HERO ─── */
@@ -314,7 +328,7 @@
     }
 
     .story-section > h2 {
-      font-size: 32px;
+      font-size: clamp(24px, 6vw, 32px);
       font-weight: 800;
       color: #1a1a2e;
       margin-bottom: 48px;
@@ -363,7 +377,7 @@
     }
 
     .story-card h3 {
-      font-size: 22px;
+      font-size: clamp(19px, 4.5vw, 22px);
       font-weight: 800;
       color: #1a1a2e;
       margin-bottom: 14px;
@@ -406,10 +420,9 @@
       border-radius: 20px;
       padding: 48px 40px;
       text-align: center;
-      margin: 0 24px 40px;
+      width: calc(100% - 48px);
       max-width: 800px;
-      margin-left: auto;
-      margin-right: auto;
+      margin: 0 auto 40px;
     }
 
     .diagnosis-box .label {
@@ -429,6 +442,7 @@
 
     .diagnosis-box h2 span {
       color: #f0c040;
+      white-space: nowrap;
     }
 
     .diagnosis-box p {
@@ -446,24 +460,25 @@
 
     .treatment-section h2 {
       text-align: center;
-      font-size: 30px;
+      font-size: clamp(24px, 5.5vw, 30px);
       font-weight: 800;
       color: #1a1a2e;
       margin-bottom: 40px;
     }
 
     .treatment-steps {
-      display: flex;
-      flex-wrap: wrap;
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
       gap: 20px;
       max-width: 800px;
       margin: 0 auto;
-      justify-content: center;
+    }
+
+    @media (max-width: 640px) {
+      .treatment-steps { grid-template-columns: 1fr; }
     }
 
     .treatment-step {
-      flex: 1;
-      min-width: 200px;
       background: #f9f6f1;
       border-radius: 16px;
       padding: 28px 24px;
@@ -546,24 +561,25 @@
     }
 
     .payment-section h2 {
-      font-size: 28px;
+      font-size: clamp(22px, 5.5vw, 28px);
       font-weight: 800;
       color: #1a1a2e;
       margin-bottom: 36px;
     }
 
     .payment-cards {
-      display: flex;
-      flex-wrap: wrap;
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
       gap: 20px;
       max-width: 800px;
       margin: 0 auto 40px;
-      justify-content: center;
+    }
+
+    @media (max-width: 600px) {
+      .payment-cards { grid-template-columns: 1fr; }
     }
 
     .payment-card {
-      flex: 1;
-      min-width: 220px;
       background: #f9f6f1;
       border-radius: 20px;
       padding: 32px 28px;
@@ -599,7 +615,7 @@
       font-size: 18px;
       font-weight: 800;
       color: #1a1a2e;
-      word-break: break-all;
+      white-space: nowrap;
     }
 
     .copy-btn {
@@ -612,6 +628,7 @@
       margin-top: 8px;
       padding: 0;
       display: block;
+      text-align: left;
     }
 
     .copy-btn:hover {
@@ -734,13 +751,20 @@
       .sticky-bar .sticky-text { display: none; }
       .sticky-bar { justify-content: center; }
       .story-card { padding: 24px 20px; }
-      .payment-card { min-width: 100%; }
+      .payment-card { padding: 24px 20px; }
+      .diagnosis-box { padding: 36px 20px; width: calc(100% - 32px); }
+      .urgency-box { padding: 18px 24px; }
+      .donate-btn { padding: 16px 32px; }
+    }
+
+    @media (max-width: 360px) {
+      .payment-card .value { font-size: 17px; }
     }
 
     /* ─── LANDING PAGE ─── */
     #landing { font-family: 'Open Sans', sans-serif; }
     #landing .card {
-      position: relative; width: 100%; min-height: 100svh;
+      position: relative; width: 100%; min-height: 100vh; min-height: 100svh;
       border-radius: 0; overflow: hidden;
       display: flex; flex-direction: column;
       background: url('img/img5.jpeg?v=3') center -164px / cover no-repeat;
@@ -822,7 +846,7 @@
       font-family: 'Montserrat', sans-serif; font-weight: 700; font-size: 14px;
       color: #d4a84b; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: -5px;
     }
-    #landing .box-value { font-size: 15px; color: #1a1a1a; line-height: 1.5; word-break: break-all; }
+    #landing .box-value { font-size: clamp(12px, 3.7vw, 15px); color: #1a1a1a; line-height: 1.5; white-space: nowrap; }
     #landing .box-footer {
       border-top: 1px solid rgba(0,0,0,0.12);
       font-size: 15px; color: #1a1a1a; text-align: center;
@@ -839,13 +863,31 @@
       #landing .btn { font-size: 16px; }
       #landing .description { font-size: 16px; }
       #landing .motto { font-size: 16px; }
-      #landing .box-value { font-size: 13px; }
+      #landing .box-col { padding: 0 4px; }
       #landing .box-footer { font-size: 13px; }
       #landing .box { padding: 5px 0; }
     }
     @media (min-width: 768px) {
       #landing .name { font-size: 34px; }
       #landing .diagnosis-label { font-size: 25px; }
+    }
+    /* Tablet / desktop: the photo is a tall portrait, so keep the first screen
+       as a centred column over a blurred copy of the same photo */
+    @media (min-width: 600px) {
+      #landing { position: relative; overflow: hidden; background: #1a1a2e; }
+      #landing::before {
+        content: ''; position: absolute; inset: -40px;
+        background: url('img/img5.jpeg?v=3') center / cover no-repeat;
+        filter: blur(28px) brightness(0.55);
+      }
+      #landing .card {
+        max-width: 480px; margin: 0 auto;
+        box-shadow: 0 0 60px rgba(0,0,0,0.45);
+      }
+      #landing .name { font-size: 30px; }
+      #landing .diagnosis-label { font-size: 22px; }
+      #landing .top { min-height: 460px; }
+      #landing .bottom { padding-bottom: 20px; }
     }
   </style>
 </head>
