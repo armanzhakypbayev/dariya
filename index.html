@@ -382,21 +382,21 @@
     }
 
     .timeline li {
-      display: flex;
-      gap: 12px;
+      position: relative;
+      padding-left: 20px;
       margin-bottom: 10px;
       font-size: 15px;
       color: #555;
-      align-items: flex-start;
     }
 
     .timeline li .dot {
+      position: absolute;
+      left: 0;
+      top: 9px;
       width: 8px;
       height: 8px;
       background: #dac7fc;
       border-radius: 50%;
-      margin-top: 8px;
-      flex-shrink: 0;
     }
 
     /* ─── DIAGNOSIS HIGHLIGHT ─── */
@@ -893,7 +893,7 @@
         </div>
         <div class="box-footer">
           Для переводов по номеру телефона: <br>
-          <span>+7 701 794 84 31 (Айжан Н.)</span>
+          <span>+7 701 511 90 63 (Талгат М.)</span>
         </div>
       </div>
     </div>
@@ -908,7 +908,7 @@
     <div class="hero-text">
       <div class="hero-badge">Срочный сбор</div>
       <h1>Помогите спасти нашу дочь от <span>нейробластомы</span></h1>
-      <p class="hero-sub">Дария, 1 год 11 месяцев — борется с раком 4-й стадии. Каждый тенге — это шаг к её жизни.</p>
+      <p class="hero-sub">Дария, 2 года 6 месяцев — борется с раком 4-й стадии. Каждый тенге — это шаг к её жизни.</p>
 
       <div class="urgency-box">
         <div class="urgency-label">Нашей дочери нужна ваша помощь</div>
@@ -950,26 +950,44 @@
       <li><div class="dot"></div>11 августа — вылетели в г. Сеул, клиника Северанс</li>
       <li><div class="dot"></div>Сеул подтвердил: нейробластома высокого риска 4 стадии</li>
       <li><div class="dot"></div>Протокол лечения — 2 года</li>
-      <li><div class="dot"></div>Получили 4 курса химиотерапии</li>
-      <li><div class="dot"></div>Из-за сильных побочных эффектов у Дарии произошла <strong>остановка сердца</strong></li>
-      <li><div class="dot"></div>34 дней в реанимации</li>
+      <li><div class="dot"></div>6 месяцев лечения в Корее, получили 4 курса химиотерапии</li>
+      <li><div class="dot"></div>Из-за осложнений дыхания и инфекций 3 раза были в реанимации</li>
+      <li><div class="dot"></div>Последний раз — 34 дня на ИВЛ, <strong>остановка сердца на 1 час</strong>, отказ почек и лёгких, аппарат ЭКМО и диализ</li>
+      <li><div class="dot"></div>Благодаря реаниматологам госпиталя Дария выкарабкалась</li>
     </ul>
   </div>
 
   <div class="story-card">
     <span class="story-step">Этап 3 — Шанс, за который мы боремся</span>
-    <h3>Барселона — последняя надежда</h3>
+    <h3>Барселона — лечение даёт результат</h3>
+    <p>Сейчас Дария проходит лечение в госпитале Sant Joan de Déu (г. Барселона).</p>
+    <ul class="timeline">
+      <li><div class="dot"></div>Пройдено 8 циклов химио-иммунотерапии, операция по удалению опухоли и лучевая терапия</li>
+      <li><div class="dot"></div>Есть <strong>положительная динамика</strong> — опухоль практически отступила</li>
+      <li><div class="dot"></div>С 19 по 23 октября — контрольное обследование (MIBG, пункция костного мозга, МРТ)</li>
+      <li><div class="dot"></div>Впереди ещё 3 цикла химио-иммунотерапии — по плану до конца января 2027 г.</li>
+      <li><div class="dot"></div>Из-за опухоли у Дарии отказали ножки, сейчас идёт реабилитация: она уже начала ползать и вставать</li>
+    </ul>
+  </div>
+
+  <div class="story-card">
+    <span class="story-step">Наша семья</span>
+    <h3>Почему мы просим о помощи</h3>
     <p>
-      Вследствие остановки сердца мы были вынуждены сменить клинику и продолжить лечение в госпитале г. Барселона.
-      Сейчас врачи дают нам <strong>благоприятные прогнозы</strong>, но для продолжения лечения нужны огромные средства.
-      Это единственный шанс спасти Дарию.
+      Дарию мы ждали 8 лет — она родилась с шестой попытки ЭКО. У нас есть старшая дочь Мариям, ей 10 лет.
+    </p>
+    <p style="margin-top:12px;">
+      Мы продали квартиру и машину, потратили все сбережения и заняли в долг. Обращались во все фонды и крупные предприятия.
+      Благотворительные фонды и Министерство здравоохранения РК отказывают в поддержке: это заболевание не входит в перечень для финансирования лечения за рубежом.
+      С прошлого года ведём сбор в Instagram, и благодаря неравнодушным людям лечение продолжается. Но сейчас сборы сильно упали, а <strong>долг перед клиникой растёт</strong>.
     </p>
   </div>
 
   <div class="story-card">
     <span class="story-step">Сбор средств</span>
-    <h3>Помогите нам достичь цели</h3>
-    <div class="progress-wrap" style="max-width:100%;margin:16px 0 0;padding:0;" data-collected="76" data-goal="254">
+    <h3>Помогите нам закрыть долг перед клиникой</h3>
+    <p>Общий бюджет лечения — <strong>418 млн ₸</strong>. Сейчас долг перед клиникой составляет <strong>90 млн ₸</strong>.</p>
+    <div class="progress-wrap" style="max-width:100%;margin:16px 0 0;padding:0;" data-collected="6" data-goal="90">
       <div class="progress-labels" style="color:#555;font-size:18px;">
         <span>Собрано: <strong id="prog-collected"></strong></span>
         <span>Цель: <strong id="prog-goal"></strong></span>
@@ -986,7 +1004,7 @@
 <!-- ─── DIAGNOSIS HIGHLIGHT ─── -->
 <div class="diagnosis-box">
   <div class="label">Официальный диагноз</div>
-  <h2>Нейробластома, <span>4-я стадия</span><br />с метастазами</h2>
+  <h2>Нейробластома высокого риска, <span>4-я стадия</span><br />с метастазами в кости и костный мозг</h2>
   <p>Подтверждено специалистами. <br> Без лечения — нет шанса. <br> С лечением — есть надежда.</p>
 </div>
 
@@ -996,18 +1014,18 @@
   <div class="treatment-steps">
     <div class="treatment-step">
       <div class="step-num">1</div>
-      <h3>Химиотерапия</h3>
-      <p>Интенсивные курсы химиотерапии для уменьшения опухоли и метастазов</p>
+      <h3>Химио-иммунотерапия</h3>
+      <p>Пройдено 8 циклов, впереди ещё 3 — до конца января 2027 г.</p>
     </div>
     <div class="treatment-step">
       <div class="step-num">2</div>
       <h3>Операция</h3>
-      <p>Хирургическое удаление первичной опухоли</p>
+      <p>Проведена — опухоль удалена</p>
     </div>
     <div class="treatment-step">
       <div class="step-num">3</div>
-      <h3>Радиотерапия</h3>
-      <p>Облучение поражённых зон для уничтожения оставшихся раковых клеток</p>
+      <h3>Лучевая терапия</h3>
+      <p>Пройдена — облучение поражённых зон</p>
     </div>
   </div>
 </section>
@@ -1053,11 +1071,17 @@
     <div class="payment-card">
       <div class="card-icon">📞</div>
       <h3>Перевод по номеру телефона</h3>
-      <div class="value" id="phoneNum">+7 701 794 84 31</div>
+      <div class="value" id="phoneNum">+7 701 511 90 63</div>
       <div class="value" id="phoneContact">Талғат М.</div>
       <button class="copy-btn" onclick="copyText('phoneNum', this)">Скопировать номер</button>
     </div>
   </div>
+  <p style="max-width:680px;margin:0 auto 24px;font-size:15px;color:#555;line-height:1.8;">
+    <strong>Родители Дарии:</strong><br />
+    Талгат (папа) — <a href="https://wa.me/77015119063" style="color:#8bb650;">+7 701 511 90 63</a> (WhatsApp)<br />
+    Айжан (мама) — <a href="https://wa.me/77017948431" style="color:#8bb650;">+7 701 794 84 31</a> (WhatsApp)<br />
+    Instagram — <a href="https://instagram.com/dariya.komek" style="color:#8bb650;">dariya.komek</a>
+  </p>
   <p class="disclaimer">
     Часть собранных средств направляется на организацию информационной кампании, расходы на рекламу для расширения охвата и привлечения большего числа людей к помощи Дарие.
   </p>
